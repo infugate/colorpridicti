@@ -156,7 +156,7 @@ const Color = () => {
       // console.log("ok")
       try {
         const { data } = await axios.put(
-          `${process.env.REACT_APP_API_URL}/api/color/process-result/${roundId}`,
+          `https://colorpridicti-api.vercel.app/api/color/process-result/${roundId}`,
           {
             winAmt: isWin ? localStorage.getItem("betAmount") * 1.98 : 0,
             winningNumber: localStorage.getItem("colorResult"),
