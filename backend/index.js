@@ -17,7 +17,7 @@ app.use(
 // app.use(cors());
 app.use(express.json());
 const colorPredictionRoutes = require('./routes/colorRoutes');
-mongoose.connect(`mongodb+srv://infusionpvtltd:vcLkKLKcKZgez7ur@cluster0.ta8g3.mongodb.net/bunnybet9?retryWrites=true&w=majority&appName=Cluster0`, {
+mongoose.connect(`mongodb+srv://test:test@cluster0.rwn2n.mongodb.net/`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected'))
