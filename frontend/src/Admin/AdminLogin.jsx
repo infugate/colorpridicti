@@ -18,7 +18,7 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/admin/login`,
+        `https://colorpridicti-api.vercel.app/api/admin/login`,
         formData
       );
 
