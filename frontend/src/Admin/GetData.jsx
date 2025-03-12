@@ -20,7 +20,7 @@ const GetBetData = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/color/history-all`);
+      const response = await axios.get(`https://colorpridicti-api.vercel.app/api/color/history-all`);
       setHistory(response.data);
     } catch (error) {
       console.error("Error fetching history:", error);
@@ -44,7 +44,7 @@ const GetBetData = () => {
 
   const handleReset = async () => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/api/color/reset-game`);
+      await axios.delete(`https://colorpridicti-api.vercel.app/api/color/reset-game`);
       fetchHistory();
     } catch (error) {
       console.error("Error resetting matches:", error);
