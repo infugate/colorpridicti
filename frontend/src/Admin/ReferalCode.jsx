@@ -16,7 +16,7 @@ const AdminReferralCodes = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/color/get-referal-code`);
+            const response = await axios.get(`https://colorpridicti-api.vercel.app/api/color/get-referal-code`);
             setData(response.data);
         } catch (error) {
             console.error("Error fetching referral codes", error);
@@ -30,7 +30,7 @@ const AdminReferralCodes = () => {
         }
 
         try {
-            await axios.post(`${process.env.REACT_APP_API_URL}/api/color/add-referal-code`, { referalCode });
+            await axios.post(`https://colorpridicti-api.vercel.app/api/color/add-referal-code`, { referalCode });
             fetchData();
             setShowModal(false);
             setReferalCode("");
@@ -55,7 +55,7 @@ const AdminReferralCodes = () => {
 
         if (swalResult.isConfirmed) {
             try {
-                await axios.delete(`${process.env.REACT_APP_API_URL}/api/color/add-referal-code/${id}`);
+                await axios.delete(`https://colorpridicti-api.vercel.app/api/color/add-referal-code/${id}`);
                 fetchData();
                 Swal.fire("Deleted!", "Referral code has been deleted.", "success");
             } catch (error) {
