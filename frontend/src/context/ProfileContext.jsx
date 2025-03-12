@@ -19,7 +19,7 @@ export const ProfileProvider = ({ children }) => {
         const id = objectId.id; // Extract the user ID
         try {
             // console.log("id", id)
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/name/${id}`);
+            const res = await axios.get(`https://colorpridicti-api.vercel.app/api/name/${id}`);
             // console.log(res, "res")
             setProfile({
                 username: res.data.username,
