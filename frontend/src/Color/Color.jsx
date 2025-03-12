@@ -82,7 +82,7 @@ const Color = () => {
   const fetchRandomNumber = async () => {
     try {
       // console.log(roundId, "roundId")
-      const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/color/get-random-color-by-id/${roundId}`);
+      const { data } = await axios.get(`https://colorpridicti-api.vercel.app/api/color/get-random-color-by-id/${roundId}`);
       // if(!data) setColorResult(Math.floor(Math.random() * 10))
       localStorage.setItem("colorResult", data.randomNumber);
       setColorResult(data.randomNumber);
@@ -102,7 +102,7 @@ const Color = () => {
       // console.log(profile.userId)
       const user = JSON.parse(localStorage.getItem("user"));
       // console.log(user.id);
-      const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/color/history/${user.id}`);
+      const { data } = await axios.get(`https://colorpridicti-api.vercel.app/api/color/history/${user.id}`);
       setHistoryByd(data);
       // console.log(data, "history")
     } catch (error) {
@@ -219,7 +219,7 @@ const Color = () => {
     try {
       // const newRoundId = `R${Date.now().toString()}`; // Generate roundId if needed
       // setRoundId(newRoundId);
-      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/api/color/place-bet`, {
+      const { data } = await axios.post(`https://colorpridicti-api.vercel.app/api/color/place-bet`, {
         amount: betAmount,
         user: profile.userId,
         selectedNumber,
