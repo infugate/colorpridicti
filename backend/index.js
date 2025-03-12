@@ -5,6 +5,8 @@ const authRoutes = require('./routes/auth');
 require('dotenv').config();
 const adminRoutes = require('./controller/adminController');
 const app = express();
+JWT_SECRET=my_scret_key
+PORT=5000
 app.use(
   cors({
     origin: ["https://colorpridicti-front.vercel.app"], // Replace '*' with the specific origin(s) you want to allow, e.g., 'https://yourdomain.com'
